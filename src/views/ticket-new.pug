@@ -1,0 +1,30 @@
+doctype html
+html(lang="hr")
+  head
+    meta(charset="utf-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1")
+    title Unos listića
+    link(rel="stylesheet", href="/style.css")
+  body
+    h1 Unos listića
+
+    if !isActive
+      p(style="color:#a00") Unosi trenutno nisu aktivni jer je kolo zatvoreno
+    if error
+      p(style="color:#a00") Greška: #{error}
+
+    form(method="post", action="/tickets")
+      label(for="user_id") Broj osobne iskaznice ili putovnice (do 20 znakova)
+      br
+      input#user_id(type="text", name="user_id", maxlength="20", required, value=values.user_id)
+      br
+      br
+      label(for="numbers") Brojevi listića (6 do 10 znamenki, u rasponu od 1 do 45 te odvojenih zarezom)
+      br
+      input#numbers(type="text", name="numbers", required, value=values.numbers)
+      br
+      br
+      button(type="submit" disabled=!isActive) Unesi
+
+    p
+      a(href="/") Povratak

@@ -1,0 +1,38 @@
+doctype html
+html(lang="hr")
+  head
+    meta(charset="utf-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1")
+    title Listići za Lotto 6/45
+    link(rel="stylesheet", href="/style.css")
+  body
+    h1 Listići za Lotto 6/45
+    br
+    br
+
+    if user
+        p Prijavljeni ste kao #{user.name || user.email}
+        a(href="/logout") Odjava
+    else
+        a(href="/login") Prijava
+
+    br
+    br
+    if isActive === null
+        p (Nema podataka o kolima)
+    else
+        p Status: #{isActive ? "Kolo otvoreno" : "Kolo zatvoreno"}
+
+        if ticketCount != null
+            p broj uplaćenih listića: #{ticketCount}
+
+        if drawNumbers
+            p Izvučeni brojevi:
+            ul
+                each n in drawNumbers
+                    li= n
+            br
+
+        if isActive
+            p
+                a(href="/tickets/new") Unesi listić

@@ -1,0 +1,36 @@
+doctype html
+html(lang="hr")
+  head
+      meta(charset="utf-8")
+      meta(name="viewport", content="width=device-width, initial-scale=1")
+      title Vaš listić
+      link(rel="stylesheet", href="/style.css")
+  body
+      h1 Vaš listić
+      p ID listića: #{ticket.id}
+      br
+
+      h3 Odabrani brojevi:
+      ul
+      each n in ticket.numbers
+          li= n
+
+      br
+      br
+      if drawNumbers
+          h3 Izvučeni brojevi
+          ul
+              each n in drawNumbers
+                  li= n
+      else
+          p Još nema izvučenih brojeva za ovo kolo
+
+      br
+      br
+
+      h3 QR kod listića
+      img(src=`/ticket/${ticket.id}/qr` width="200" height="200")
+
+      br
+      p
+          a(href="/") Povratak na početnu
