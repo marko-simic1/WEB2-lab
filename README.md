@@ -14,9 +14,9 @@ Ovo je projekt iz kolegija **Napredni razvoj programske potpore za web**. Aplika
 ### Administratorski dio (M2M)
 Putem Auth0 M2M aplikacije i client_credentials tokena moguće je:
 
-| POST | `/new-round` | otvara novo kolo |
-| POST | `/close` | zatvara trenutno kolo |
-| POST | `/store-results` | sprema izvučene brojeve (moguće samo nakon zatvaranja kola i ako rezultati još ne postoje) |
+- | POST | `/new-round` | otvara novo kolo |
+- | POST | `/close` | zatvara trenutno kolo |
+- | POST | `/store-results` | sprema izvučene brojeve (moguće samo nakon zatvaranja kola i ako rezultati još ne postoje) |
 
 Sve tri rute vraćaju HTTP status 204 u slučaju uspjeha.
 
