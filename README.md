@@ -25,5 +25,4 @@ Aplikacija je postavljena na Render i dostupna na:
 **URL aplikacije:**  
 https://web2-lab-76rk.onrender.com/
 
-Korisnik koji se može prijaviti i uplatiti listić:
 
